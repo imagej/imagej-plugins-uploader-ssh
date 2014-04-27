@@ -67,7 +67,13 @@
 			<groupId>net.imagej</groupId>
 			<artifactId>imagej-updater</artifactId>
 			<version>${imagej-updater.version}</version>
-			<type>test-jar</type>
+			<classifier>tests</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.scijava</groupId>
+			<artifactId>scijava-common</artifactId>
+			<classifier>tests</classifier>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
