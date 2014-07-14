@@ -113,49 +113,8 @@ final class SSHSessionCreator {
 			result.port = Integer.parseInt(sshHost.substring(colon + 1));
 			result.sshHost = sshHost.substring(0, colon);
 		}
-
-		final File config =
-			new File(new File(System.getProperty("user.home"), ".ssh"), "config");
-		if (!config.exists()) {
-			return result;
-		}
-
-		try {
-			final BufferedReader reader = new BufferedReader(new FileReader(config));
-			boolean hostMatches = false;
-			for (;;) {
-				String line = reader.readLine();
-				if (line == null) break;
-				line = line.trim();
-				final int space = line.indexOf(' ');
-				if (space < 0) {
-					continue;
-				}
-				final String key = line.substring(0, space).toLowerCase();
-				if (key.equals("host")) {
-					hostMatches = line.substring(5).trim().equals(result.sshHost);
-				}
-				else if (hostMatches) {
-					if (key.equals("user")) {
-						if (username == null || username.equals("")) {
-							result.username = line.substring(5).trim();
-						}
-					}
-					else if (key.equals("hostname")) {
-						result.sshHost = line.substring(9).trim();
-					}
-					else if (key.equals("identityfile")) {
-						result.identity = line.substring(13).trim();
-					}
-				}
-			}
-			reader.close();
-			return result;
-		}
-		catch (final Exception e) {
-			log.error(e);
-			return null;
-		}
+		result.readUserSSHConfig(log);
+		return result;
 	}
 
 	private static class ConfigInfo {
@@ -163,6 +122,50 @@ final class SSHSessionCreator {
 		protected String sshHost;
 		protected String identity;
 		protected int port;
+
+		// Check for IdentityFile options in the user's ~/.ssh/config
+		private void readUserSSHConfig(final LogService log) {
+			final File config =
+				new File(new File(System.getProperty("user.home"), ".ssh"), "config");
+			if (!config.exists()) {
+				return;
+			}
+
+			try {
+				final BufferedReader reader = new BufferedReader(new FileReader(config));
+				boolean hostMatches = false;
+				for (;;) {
+					String line = reader.readLine();
+					if (line == null) break;
+					line = line.trim();
+					final int space = line.indexOf(' ');
+					if (space < 0) {
+						continue;
+					}
+					final String key = line.substring(0, space).toLowerCase();
+					if (key.equals("host")) {
+						hostMatches = line.substring(5).trim().equals(sshHost);
+					}
+					else if (hostMatches) {
+						if (key.equals("user")) {
+							if (username == null || username.equals("")) {
+								username = line.substring(5).trim();
+							}
+						}
+						else if (key.equals("hostname")) {
+							sshHost = line.substring(9).trim();
+						}
+						else if (key.equals("identityfile")) {
+							identity = line.substring(13).trim();
+						}
+					}
+				}
+				reader.close();
+			}
+			catch (final Exception e) {
+				log.error(e);
+			}
+		}
 	}
 
 	protected static UserInfo getUserInfo(final String initialPrompt, final String password) {
