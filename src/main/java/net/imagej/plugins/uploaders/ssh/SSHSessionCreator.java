@@ -114,6 +114,9 @@ final class SSHSessionCreator {
 			result.sshHost = sshHost.substring(0, colon);
 		}
 		result.readUserSSHConfig(log);
+		if (result.identity == null) {
+			result.getUserDefaultKeys();
+		}
 		return result;
 	}
 
@@ -166,6 +169,22 @@ final class SSHSessionCreator {
 				log.error(e);
 			}
 		}
+
+		// Checks for presence of the default IdentityFiles, in the
+		// users home directory, i.e., ~/.ssh/id_rsa and ~/.ssh/id_dsa
+		private void getUserDefaultKeys()
+		{
+			final String[] filenames = { "id_rsa", "id_dsa" };
+			final File userSSHDir = new File(System.getProperty("user.home"), ".ssh");
+			for (String f : filenames) {
+				final File keyfile = new File(userSSHDir, f);
+				if (keyfile.exists()) {
+					identity = keyfile.getAbsolutePath();
+					break;
+				}
+			}
+		}
+
 	}
 
 	protected static UserInfo getUserInfo(final String initialPrompt, final String password) {
