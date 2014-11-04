@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>imagej-plugins-uploader-ssh</artifactId>
-	<version>0.2.0-SNAPSHOT</version>
+	<version>0.2.1-SNAPSHOT</version>
 
 	<name>ImageJ Plugins: Uploader: SSH</name>
 	<description>ImageJ Updater support for uploading via SSH.</description>
