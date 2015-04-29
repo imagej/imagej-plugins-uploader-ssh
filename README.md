@@ -1,4 +1,4 @@
-![](http://jenkins.imagej.net/job/ImageJ-plugins-uploader-SSH/lastBuild/badge/icon)
+[![](http://jenkins.imagej.net/job/ImageJ-plugins-uploader-SSH/lastBuild/badge/icon)](http://jenkins.imagej.net/job/ImageJ-plugins-uploader-SSH/)
 
 ImageJ Plugins: Uploader: SSH
 -----------------------------
