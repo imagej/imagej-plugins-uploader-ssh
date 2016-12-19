@@ -15,6 +15,42 @@
 	<name>ImageJ Plugins: Uploader: SSH</name>
 	<description>ImageJ Updater support for uploading via SSH.</description>
 
+	<developers>
+		<developer>
+			<id>ctrueden</id>
+			<name>Curtis Rueden</name>
+			<url>http://imagej.net/User:Rueden</url>
+			<roles>
+				<role>founder</role>
+				<role>lead</role>
+				<role>debugger</role>
+				<role>reviewer</role>
+				<role>support</role>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Johannes Schindelin</name>
+			<url>http://imagej.net/User:Schindelin</url>
+			<roles><role>founder</role></roles>
+			<properties><id>dscho</id></properties>
+		</contributor>
+		<contributor>
+			<name>Yap Chin Kiet (Google Summer of Code 2009)</name>
+		</contributor>
+		<contributor>
+			<name>David Pinto</name>
+			<url>http://imagej.net/User:Carandraug</url>
+			<properties><id>carandraug</id></properties>
+		</contributor>
+		<contributor>
+			<name>Jarek Sacha</name>
+			<url>http://imagej.net/User:Jpsacha</url>
+		</contributor>
+	</contributors>
+
 	<scm>
 		<connection>scm:git:git://github.com/imagej/imagej-plugins-uploader-ssh</connection>
 		<developerConnection>scm:git:git@github.com:imagej/imagej-plugins-uploader-ssh</developerConnection>
