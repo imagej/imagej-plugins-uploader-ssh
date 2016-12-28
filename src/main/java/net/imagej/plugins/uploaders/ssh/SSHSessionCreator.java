@@ -269,9 +269,9 @@ final class SSHSessionCreator {
 	 * key.</p>
 	 * 
 	 * <p>Note that you need to connect with command-line ssh first, to record the
-	 * finger-print of the host. It might be necessary to call
-	 * <tt>ssh-keyscan test.imagej.net >> $HOME/.ssh/known_hosts</tt> if your
-	 * <tt>$HOME/.ssh/known_hosts contains hashed lines.</p>
+	 * finger-print of the host. In some cases, it might be necessary to call
+	 * <tt>ssh-keyscan test.imagej.net >> $HOME/.ssh/known_hosts</tt> to ensure
+	 * your <tt>$HOME/.ssh/known_hosts</tt> includes the right lines.</p>
 	 * 
 	 * @param host
 	 *            the ssh host, as specified in $HOME/.ssh/config
