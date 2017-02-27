@@ -1,4 +1,4 @@
-[![](http://jenkins.imagej.net/job/ImageJ-plugins-uploader-SSH/lastBuild/badge/icon)](http://jenkins.imagej.net/job/ImageJ-plugins-uploader-SSH/)
+[![](https://travis-ci.org/imagej/imagej-plugins-uploader-ssh.svg?branch=master)](https://travis-ci.org/imagej/imagej-plugins-uploader-ssh)
 
 ImageJ Plugins: Uploader: SSH
 -----------------------------
