@@ -15,11 +15,11 @@
 
 	<name>ImageJ Plugins: Uploader: SSH</name>
 	<description>ImageJ Updater support for uploading via SSH.</description>
-	<url>http://imagej.net/ImageJ_Plugins_Uploader_SSH</url>
+	<url>https://imagej.net/ImageJ_Plugins_Uploader_SSH</url>
 	<inceptionYear>2009</inceptionYear>
 	<organization>
 		<name>ImageJ</name>
-		<url>http://imagej.net/</url>
+		<url>https://imagej.net/</url>
 	</organization>
 	<licenses>
 		<license>
@@ -32,7 +32,7 @@
 		<developer>
 			<id>ctrueden</id>
 			<name>Curtis Rueden</name>
-			<url>http://imagej.net/User:Rueden</url>
+			<url>https://imagej.net/User:Rueden</url>
 			<roles>
 				<role>founder</role>
 				<role>lead</role>
@@ -46,7 +46,7 @@
 	<contributors>
 		<contributor>
 			<name>Johannes Schindelin</name>
-			<url>http://imagej.net/User:Schindelin</url>
+			<url>https://imagej.net/User:Schindelin</url>
 			<roles><role>founder</role></roles>
 			<properties><id>dscho</id></properties>
 		</contributor>
@@ -55,12 +55,12 @@
 		</contributor>
 		<contributor>
 			<name>David Pinto</name>
-			<url>http://imagej.net/User:Carandraug</url>
+			<url>https://imagej.net/User:Carandraug</url>
 			<properties><id>carandraug</id></properties>
 		</contributor>
 		<contributor>
 			<name>Jarek Sacha</name>
-			<url>http://imagej.net/User:Jpsacha</url>
+			<url>https://imagej.net/User:Jpsacha</url>
 		</contributor>
 	</contributors>
 
@@ -101,7 +101,7 @@ Institute of Molecular Cell Biology and Genetics.</license.copyrightOwners>
 	<repositories>
 		<repository>
 			<id>imagej.public</id>
-			<url>http://maven.imagej.net/content/groups/public</url>
+			<url>https://maven.imagej.net/content/groups/public</url>
 		</repository>
 	</repositories>
 
